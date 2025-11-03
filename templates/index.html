@@ -3,62 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vikas Prajapat - Ai Engineer</title>
+    <title>Vikas Prajapat - AI Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-<body class="bg-gradient-to-br from-gray-900 to-black text-white min-h-screen">
-    <header class="fixed w-full bg-black bg-opacity-80 z-50 flex justify-between items-center p-6">
-        <div class="text-2xl font-bold">V</div>
+<body class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white min-h-screen overflow-x-hidden font-serif">
+    <header class="fixed w-full bg-black bg-opacity-90 z-50 flex justify-between items-center p-6 transition-all duration-300 ease-in-out">
+        <div class="text-3xl font-bold text-gold">V</div>
         <nav class="space-x-6">
-            <a href="#projects" class="hover:text-green-400 transition duration-300">Projects</a>
-            <a href="#experience" class="hover:text-green-400 transition duration-300">Experience</a>
-            <a href="#about" class="hover:text-green-400 transition duration-300">About Me</a>
-            <a href="#contact" class="hover:text-green-400 transition duration-300">Contact</a>
+            <a href="#projects" class="nav-link hover:text-gold transition duration-300">Projects</a>
+            <a href="#experience" class="nav-link hover:text-gold transition duration-300">Experience</a>
+            <a href="#about" class="nav-link hover:text-gold transition duration-300">About Me</a>
+            <a href="#contact" class="nav-link hover:text-gold transition duration-300">Contact</a>
         </nav>
         <div class="space-x-4">
-            <a href="https://github.com/vikasprajapat2" class="hover:text-green-400 transition duration-300"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/vikas-prajapat-01473322a/" class="hover:text-green-400 transition duration-300"><i class="fab fa-linkedin"></i></a>
-            <a href="https://x.com/vikas__08" class="hover:text-green-400 transition duration-300"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/vikasprajapat2" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition duration-300"><i class="fab fa-github text-xl"></i></a>
+            <a href="https://www.linkedin.com/in/vikas-prajapat-01473322a/" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition duration-300"><i class="fab fa-linkedin text-xl"></i></a>
+            <a href="https://x.com/vikas__08" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
         </div>
     </header>
 
-    <section class="hero flex flex-col items-center justify-center h-screen text-center px-6 animate-fadeIn">
-        <div class="bg-green-500 text-black px-4 py-2 rounded-full mb-4 animate-bounce">Available for work</div>
-        <h1 class="text-6xl font-bold animate-slideIn">Vikas Prajapat</h1>
-        <h2 class="text-4xl mb-4">Ai Engineer</h2>
-        <p class="max-w-md mb-6">I am passionate about crafting innovative Ai Inovation, merging creativity and functionality to deliver exceptional user experiences.</p>
-        <div class="space-x-4">
-            <a href="#" class="btn bg-transparent border-2 border-green-500 hover:bg-green-500 hover:text-black text-white px-6 py-2 rounded transition duration-300">Download My Resume</a>
-            <a href="#" class="btn bg-green-500 text-black px-6 py-2 rounded hover:bg-green-600 transition duration-300">Contact Me</a>
+    <section class="hero flex flex-col items-center justify-center h-screen text-center px-6 animate-fadeIn pt-24">
+        <div class="bg-gold text-black px-6 py-3 rounded-full mb-6">Available for work</div>
+        <h1 class="text-7xl font-extrabold animate-slideUp">Vikas Prajapat</h1>
+        <h2 class="text-5xl mb-6 animate-fadeInDelay">AI Engineer</h2>
+        <p class="max-w-lg mb-8 text-lg animate-fadeInDelay2">I am passionate about crafting innovative AI innovations, merging creativity and functionality to deliver exceptional user experiences.</p>
+        <div class="space-x-6">
+            <a href="#" class="btn bg-transparent border-2 border-gold hover:bg-gold hover:text-black text-white px-8 py-3 rounded-lg transition duration-300">Download My Resume</a>
+            <a href="#contact" class="btn bg-gold text-black px-8 py-3 rounded-lg hover:bg-yellow-600 transition duration-300">Contact Me</a>
         </div>
     </section>
+
+    <section id="about" class="py-24 text-center bg-gray-900">
+        <h2 class="text-5xl mb-10 text-gold">About Me</h2>
+        <p class="max-w-3xl mx-auto text-lg">Hi 👋, I'm Vikas Prajapat. AI Engineer | Machine Learning | Computer Vision | Generative AI. Current Focus: Building state-of-the-art Generative AI models & Real-time Vision Systems. Learning: Exploring Reinforcement Learning & Large Language Models (LLMs). Collaboration: Open to AI research & scalable ML projects. Expertise: Deep Learning optimization, NLP pipeline design, CV solutions. Fun Fact: I once built an AI to optimize my daily schedule—saved me hours weekly!</p>
+        <p class="max-w-3xl mx-auto mt-6 text-lg">Joined X (formerly Twitter) in December 2016 with 15 posts. Recent activity includes interactions with Indian Railways regarding station issues and political commentary.</p>
+    </section>
+
+    <section id="projects" class="py-24 bg-gray-800">
+        <h2 class="text-5xl mb-12 text-center text-gold">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+            <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transform hover:scale-102 transition duration-300">
+                <h3 class="text-2xl mb-2 text-gold">python</h3>
+                <p>No description available.</p>
+                <p class="mt-2">Language: Python</p>
+                <a href="https://github.com/vikasprajapat2/python" class="text-gold hover:underline mt-4 block">View on GitHub</a>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transform hover:scale-102 transition duration-300">
+                <h3 class="text-2xl mb-2 text-gold">Task-2---Number-guessing-game</h3>
+                <p>No description available.</p>
+                <p class="mt-2">Language: Java</p>
+                <a href="https://github.com/vikasprajapat2/Task-2---Number-guessing-game" class="text-gold hover:underline mt-4 block">View on GitHub</a>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transform hover:scale-102 transition duration-300">
+                <h3 class="text-2xl mb-2 text-gold">task</h3>
+                <p>No description available.</p>
+                <p class="mt-2">Language: Java</p>
+                <a href="https://github.com/vikasprajapat2/task" class="text-gold hover:underline mt-4 block">View on GitHub</a>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transform hover:scale-102 transition duration-300">
+                <h3 class="text-2xl mb-2 text-gold">task-3--Atm-interface</h3>
+                <p>No description available.</p>
+                <p class="mt-2">Language: Java</p>
+                <a href="https://github.com/vikasprajapat2/task-3--Atm-interface" class="text-gold hover:underline mt-4 block">View on GitHub</a>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transform hover:scale-102 transition duration-300">
+                <h3 class="text-2xl mb-2 text-gold">Matrix-Visualization</h3>
+                <p>No description available.</p>
+                <p class="mt-2">Language: Jupyter Notebook</p>
+                <a href="https://github.com/vikasprajapat2/Matrix-Visualization" class="text-gold hover:underline mt-4 block">View on GitHub</a>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transform hover:scale-102 transition duration-300">
+                <h3 class="text-2xl mb-2 text-gold">credit-card-fraud-detection-using-logistic-regression</h3>
+                <p>No description available.</p>
+                <p class="mt-2">Language: Not specified</p>
+                <a href="https://github.com/vikasprajapat2/credit-card-fraud-detection-using-logistic-regression" class="text-gold hover:underline mt-4 block">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 text-center bg-gray-900">
+        <h2 class="text-5xl mb-10 text-gold">Experience</h2>
+        <p class="max-w-2xl mx-auto text-lg">Detailed experience information is not publicly available at this time. Please visit my LinkedIn profile for more details on professional background, or contact me directly.</p>
+    </section>
+
+    <section id="contact" class="py-24 bg-gray-800">
+        <h2 class="text-5xl mb-12 text-center text-gold">Contact Me</h2>
+        <form class="max-w-md mx-auto space-y-6">
+            <input type="text" placeholder="Your Name" class="w-full p-4 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-gold transition duration-300">
+            <input type="email" placeholder="Your Email" class="w-full p-4 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-gold transition duration-300">
+            <textarea placeholder="Your Message" class="w-full p-4 rounded-lg bg-gray-900 border border-gray-700 focus:outline-none focus:border-gold transition duration-300 h-40"></textarea>
+            <button type="submit" class="w-full bg-gold text-black px-6 py-4 rounded-lg hover:bg-yellow-600 transition duration-300">Send Message</button>
+        </form>
+        <p class="text-center mt-8">Alternatively, reach out via social links above.</p>
+    </section>
+
+    <footer class="bg-gray-900 text-center py-6">
+        <p>&copy; 2025 Vikas Prajapat. All rights reserved.</p>
+    </footer>
 </body>
 </html>
-
-<style>
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-    @keyframes slideIn {
-        from { transform: translateY(-100px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-        40% { transform: translateY(-10px); }
-        60% { transform: translateY(-5px); }
-    }
-    .animate-fadeIn { animation: fadeIn 2s ease-in; }
-    .animate-slideIn { animation: slideIn 2s ease-out; }
-    .animate-bounce { animation: bounce 2s infinite; }
-    @media (max-width: 768px) {
-        .hero h1 { font-size: 3rem; }
-        .hero h2 { font-size: 2rem; }
-        header { flex-direction: column; }
-        nav { margin-top: 1rem; }
-        nav a { display: block; margin: 0.5rem 0; }
-    }
-</style>
