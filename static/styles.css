@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #000; /* Solid black base */
+    color: #fff;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000 100%); /* Subtle gradient effect */
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00ff00;
+}
+
+.social-icons a {
+    color: #fff;
+    margin-left: 15px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #00ff00;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+.status {
+    background: #00ff00;
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    animation: bounce 2s infinite;
+}
+
+.animated-text {
+    font-size: 4em;
+    animation: slideIn 2s ease-out;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+p {
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.buttons .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.buttons .btn.resume {
+    background: transparent;
+}
+
+.buttons .btn.contact {
+    background: #00ff00;
+    color: #000;
+}
+
+.buttons .btn:hover {
+    background: #00ff00;
+    color: #000;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .animated-text {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikas Prajapat - Ai Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-black text-white min-h-screen">
+    <header class="fixed w-full bg-black bg-opacity-80 z-50 flex justify-between items-center p-6">
+        <div class="text-2xl font-bold">V</div>
+        <nav class="space-x-6">
+            <a href="#projects" class="hover:text-green-400 transition duration-300">Projects</a>
+            <a href="#experience" class="hover:text-green-400 transition duration-300">Experience</a>
+            <a href="#about" class="hover:text-green-400 transition duration-300">About Me</a>
+            <a href="#contact" class="hover:text-green-400 transition duration-300">Contact</a>
+        </nav>
+        <div class="space-x-4">
+            <a href="https://github.com/vikasprajapat2" class="hover:text-green-400 transition duration-300"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/vikas-prajapat-01473322a/" class="hover:text-green-400 transition duration-300"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/vikas__08" class="hover:text-green-400 transition duration-300"><i class="fab fa-twitter"></i></a>
+        </div>
+    </header>
+
+    <section class="hero flex flex-col items-center justify-center h-screen text-center px-6 animate-fadeIn">
+        <div class="bg-green-500 text-black px-4 py-2 rounded-full mb-4 animate-bounce">Available for work</div>
+        <h1 class="text-6xl font-bold animate-slideIn">Vikas Prajapat</h1>
+        <h2 class="text-4xl mb-4">Ai Engineer</h2>
+        <p class="max-w-md mb-6">I am passionate about crafting innovative Ai Inovation, merging creativity and functionality to deliver exceptional user experiences.</p>
+        <div class="space-x-4">
+            <a href="#" class="btn bg-transparent border-2 border-green-500 hover:bg-green-500 hover:text-black text-white px-6 py-2 rounded transition duration-300">Download My Resume</a>
+            <a href="#" class="btn bg-green-500 text-black px-6 py-2 rounded hover:bg-green-600 transition duration-300">Contact Me</a>
+        </div>
+    </section>
+</body>
+</html>
+
+<style>
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes slideIn {
+        from { transform: translateY(-100px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-10px); }
+        60% { transform: translateY(-5px); }
+    }
+    .animate-fadeIn { animation: fadeIn 2s ease-in; }
+    .animate-slideIn { animation: slideIn 2s ease-out; }
+    .animate-bounce { animation: bounce 2s infinite; }
+    @media (max-width: 768px) {
+        .hero h1 { font-size: 3rem; }
+        .hero h2 { font-size: 2rem; }
+        header { flex-direction: column; }
+        nav { margin-top: 1rem; }
+        nav a { display: block; margin: 0.5rem 0; }
+    }
+</style>
