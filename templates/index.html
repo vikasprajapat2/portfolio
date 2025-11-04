@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white font-sans min-h-screen">
+<body class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white font-sans min-h-screen overflow-x-hidden">
     <div class="fixed inset-0 z-0">
         <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800 animate-bg-pulse"></div>
     </div>
@@ -16,7 +16,6 @@
         <!-- FULL-WIDTH HEADER (Adjusted) -->
         <header class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90 backdrop-blur-sm shadow-lg">
             <div class="flex items-center justify-between h-16 px-8 max-w-7xl mx-auto">
-                
                 <!-- LEFT: V + NAV (Moved Closer) -->
                 <div class="flex items-center space-x-6 pl-4">
                     <div class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
@@ -63,19 +62,24 @@
             <section id="about" class="section min-h-screen flex items-center justify-center">
                 <div class="text-center max-w-3xl mx-auto space-y-12">
                     <h2 class="text-5xl mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">About Me</h2>
-                    <div class="about-content flex flex-col md:flex-row justify-center items-center gap-12">
-                        <div class="about-left relative">
-                            <div class="globe w-72 h-72 rounded-full flex items-center justify-center text-white font-bold mb-6 animate-spin-slow relative overflow-hidden">
-                                <div class="absolute inset-0 bg-gradient-to-br from-blue-700 via-green-600 to-blue-900 animate-globe-spin"></div>
-                                <div class="relative z-10 flex flex-col items-center">
-                                    <span class="text-xl">AI</span>
-                                    <span class="text-sm mt-2">Vadodara, India</span>
+                    <div class="space-y-12">
+                        <!-- Globe Section with Boundary -->
+                        <div class="about-globe p-6 bg-gray-800 rounded-xl shadow-lg border-2 border-blue-400">
+                            <div class="about-left relative">
+                                <div class="globe w-72 h-72 rounded-full flex items-center justify-center text-white font-bold mb-6 animate-spin-slow relative overflow-hidden">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-blue-700 via-green-600 to-blue-900 animate-globe-spin"></div>
+                                    <div class="relative z-10 flex flex-col items-center">
+                                        <span class="text-xl">AI</span>
+                                        <span class="text-sm mt-2">Vadodara, India</span>
+                                    </div>
                                 </div>
+                                <div class="absolute top-0 left-0 w-72 h-72 border-4 border-white rounded-full opacity-50 animate-pulse"></div>
+                                <p class="tagline text-gray-400 mt-4">Navigating the world of tech</p>
                             </div>
-                            <div class="absolute top-0 left-0 w-72 h-72 border-4 border-white rounded-full opacity-50 animate-pulse"></div>
-                            <p class="tagline text-gray-400 mt-4">Navigating the world of tech</p>
                         </div>
-                        <div class="about-right bg-gray-800 p-6 rounded-xl shadow-lg border-2 border-white">
+
+                        <!-- Social Links Section with Boundary -->
+                        <div class="about-social p-6 bg-gray-800 rounded-xl shadow-lg border-2 border-purple-400">
                             <p class="connect-title text-2xl text-gray-300 mb-6">Connect with me</p>
                             <ul class="social-links flex flex-col items-center space-y-4">
                                 <li><a href="https://github.com/vikasprajapat2" target="_blank" class="flex items-center gap-3 text-white hover:text-gray-300 transition duration-300"><i class="fab fa-github"></i> Github</a></li>
@@ -84,58 +88,62 @@
                                 <li><a href="mailto:vikasprajapat@example.com" target="_blank" class="flex items-center gap-3 text-white hover:text-gray-300 transition duration-300"><i class="fas fa-envelope"></i> Mail</a></li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="skills-section">
-                        <p class="skills-title text-2xl text-gray-300 mb-6">Skills</p>
-                        <div class="skills-list flex gap-6 overflow-hidden whitespace-nowrap animate-slide-right-to-left">
-                            <div class="skill-item flex items-center space-x-2 bg-blue-500 rounded-lg p-2">
-                                <i class="fas fa-code text-yellow-300"></i>
-                                <span class="text-white">Py</span>
-                                <a href="https://www.python.org/" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
-                            </div>
-                            <div class="skill-item flex items-center space-x-2 bg-green-500 rounded-lg p-2">
-                                <i class="fas fa-brain text-red-300"></i>
-                                <span class="text-white">ML</span>
-                                <a href="https://scikit-learn.org/" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
-                            </div>
-                            <div class="skill-item flex items-center space-x-2 bg-purple-500 rounded-lg p-2">
-                                <i class="fas fa-image text-orange-300"></i>
-                                <span class="text-white">CV</span>
-                                <a href="https://opencv.org/" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
-                            </div>
-                            <div class="skill-item flex items-center space-x-2 bg-indigo-500 rounded-lg p-2">
-                                <i class="fas fa-network-wired text-teal-300"></i>
-                                <span class="text-white">DL</span>
-                                <a href="https://pytorch.org/" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
-                            </div>
-                            <!-- Duplicate for seamless loop -->
-                            <div class="skill-item flex items-center space-x-2 bg-blue-500 rounded-lg p-2">
-                                <i class="fas fa-code text-yellow-300"></i>
-                                <span class="text-white">Py</span>
-                                <a href="https://www.python.org/" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
-                            </div>
-                            <div class="skill-item flex items-center space-x-2 bg-green-500 rounded-lg p-2">
-                                <i class="fas fa-brain text-red-300"></i>
-                                <span class="text-white">ML</span>
-                                <a href="https://scikit-learn.org/" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
-                            </div>
-                            <div class="skill-item flex items-center space-x-2 bg-purple-500 rounded-lg p-2">
-                                <i class="fas fa-image text-orange-300"></i>
-                                <span class="text-white">CV</span>
-                                <a href="https://opencv.org/" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
-                            </div>
-                            <div class="skill-item flex items-center space-x-2 bg-indigo-500 rounded-lg p-2">
-                                <i class="fas fa-network-wired text-teal-300"></i>
-                                <span class="text-white">DL</span>
-                                <a href="https://pytorch.org/" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
+
+                        <!-- Skills Section with Boundary -->
+                        <div class="about-skills p-6 bg-gray-800 rounded-xl shadow-lg border-2 border-green-400">
+                            <p class="skills-title text-2xl text-gray-300 mb-6">Skills</p>
+                            <div class="skills-list flex gap-6 overflow-hidden whitespace-nowrap animate-slide-right-to-left">
+                                <div class="skill-item flex items-center space-x-2 bg-blue-500 rounded-lg p-2">
+                                    <i class="fab fa-python text-yellow-300"></i>
+                                    <span class="text-white">Python</span>
+                                    <a href="https://www.python.org/" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
+                                </div>
+                                <div class="skill-item flex items-center space-x-2 bg-green-500 rounded-lg p-2">
+                                    <i class="fab fa-java text-red-300"></i>
+                                    <span class="text-white">Java</span>
+                                    <a href="https://www.java.com/" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
+                                </div>
+                                <div class="skill-item flex items-center space-x-2 bg-purple-500 rounded-lg p-2">
+                                    <i class="fab fa-js text-orange-300"></i>
+                                    <span class="text-white">JavaScript</span>
+                                    <a href="https://www.javascript.com/" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
+                                </div>
+                                <div class="skill-item flex items-center space-x-2 bg-indigo-500 rounded-lg p-2">
+                                    <i class="fab fa-html5 text-teal-300"></i>
+                                    <span class="text-white">HTML</span>
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
+                                </div>
+                                <!-- Duplicate for seamless loop -->
+                                <div class="skill-item flex items-center space-x-2 bg-blue-500 rounded-lg p-2">
+                                    <i class="fab fa-python text-yellow-300"></i>
+                                    <span class="text-white">Python</span>
+                                    <a href="https://www.python.org/" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
+                                </div>
+                                <div class="skill-item flex items-center space-x-2 bg-green-500 rounded-lg p-2">
+                                    <i class="fab fa-java text-red-300"></i>
+                                    <span class="text-white">Java</span>
+                                    <a href="https://www.java.com/" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
+                                </div>
+                                <div class="skill-item flex items-center space-x-2 bg-purple-500 rounded-lg p-2">
+                                    <i class="fab fa-js text-orange-300"></i>
+                                    <span class="text-white">JavaScript</span>
+                                    <a href="https://www.javascript.com/" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
+                                </div>
+                                <div class="skill-item flex items-center space-x-2 bg-indigo-500 rounded-lg p-2">
+                                    <i class="fab fa-html5 text-teal-300"></i>
+                                    <span class="text-white">HTML</span>
+                                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" class="text-white hover:text-gray-300 ml-2">Link</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="learning-section">
-                        <p class="learning-title text-2xl text-gray-300 mb-6">Currently Learning</p>
-                        <div class="learning-list flex justify-center gap-6 flex-wrap">
-                            <div class="learning-icon w-14 h-14 bg-purple-500 rounded-lg flex items-center justify-center text-white">RL</div>
-                            <div class="learning-icon w-14 h-14 bg-purple-500 rounded-lg flex items-center justify-center text-white">LLM</div>
+
+                        <!-- Learning Section with Boundary -->
+                        <div class="about-learning p-6 bg-gray-800 rounded-xl shadow-lg border-2 border-teal-400">
+                            <p class="learning-title text-2xl text-gray-300 mb-6">Currently Learning</p>
+                            <div class="learning-list flex justify-center gap-6 flex-wrap">
+                                <div class="learning-icon w-14 h-14 bg-purple-500 rounded-lg flex items-center justify-center text-white">RL</div>
+                                <div class="learning-icon w-14 h-14 bg-purple-500 rounded-lg flex items-center justify-center text-white">LLM</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -206,7 +214,7 @@
             </section>
 
             <footer class="p-4 w-full bg-black bg-opacity-90 rounded-xl shadow-lg mt-6 text-center">
-                <p class="text-gray-400">&copy; 2025 Vikas Prajapat. All rights reserved. | Current Time: <span id="current-time">04:27 PM IST, Monday, November 03, 2025</span></p>
+                <p class="text-gray-400">&copy; 2025 Vikas Prajapat. All rights reserved. | Current Time: <span id="current-time">05:01 PM IST, Tuesday, November 04, 2025</span></p>
             </footer>
         </div>
     </div>
@@ -257,8 +265,8 @@
             100% { background-position: -100% 0; }
         }
         @keyframes slide-right-to-left {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
         .animate-fadeIn { animation: fadeIn 2s ease-in-out; }
         .animate-slideUp { animation: slideUp 2s ease-out; }
@@ -268,7 +276,7 @@
         .animate-spin-slow { animation: spin-slow 20s linear infinite; }
         .animate-bg-pulse { animation: bg-pulse 5s ease-in-out infinite; }
         .animate-globe-spin { animation: globe-spin 10s linear infinite; background-size: 200% 100%; }
-        .animate-slide-right-to-left { animation: slide-right-to-left 20s linear infinite; }
+        .animate-slide-right-to-left { animation: slide-right-to-left 10s linear infinite; }
         .btn {
             @apply inline-block px-8 py-3 rounded-lg transition duration-300 transform hover:scale-105;
         }
