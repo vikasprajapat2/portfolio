@@ -442,6 +442,11 @@
       <a href="#projects" class="block py-3 text-lg">Projects</a>
       <a href="#certificates" class="block py-3 text-lg">Certificates</a>
       <a href="#contact" class="block py-3 text-lg">Contact</a>
+      <button id="mobileThemeToggle"
+        class="w-full text-left py-3 text-lg flex items-center justify-between text-slate-400 hover:text-primary transition">
+        <span>Switch Theme</span>
+        <i class="fa-solid fa-moon"></i>
+      </button>
     </div>
   </nav>
 
@@ -929,31 +934,44 @@
 
       // Theme toggle
       const themeToggleBtn = document.getElementById('themeToggle');
-      const themeIcon = themeToggleBtn.querySelector('i');
+      const mobileThemeToggleBtn = document.getElementById('mobileThemeToggle');
+
+      // Get icons from both buttons
+      const themeIcons = [
+        themeToggleBtn.querySelector('i'),
+        mobileThemeToggleBtn.querySelector('i')
+      ];
+
+      function updateIcons(isDark) {
+        themeIcons.forEach(icon => {
+          if (isDark) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+          } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+          }
+        });
+      }
 
       // Check local storage or system preference
       if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
+        updateIcons(true);
       } else {
         document.documentElement.classList.remove('dark');
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
+        updateIcons(false);
       }
 
-      themeToggleBtn.addEventListener('click', () => {
+      function toggleTheme() {
         document.documentElement.classList.toggle('dark');
-        if (document.documentElement.classList.contains('dark')) {
-          localStorage.theme = 'dark';
-          themeIcon.classList.remove('fa-moon');
-          themeIcon.classList.add('fa-sun');
-        } else {
-          localStorage.theme = 'light';
-          themeIcon.classList.remove('fa-sun');
-          themeIcon.classList.add('fa-moon');
-        }
-      });
+        const isDark = document.documentElement.classList.contains('dark');
+        localStorage.theme = isDark ? 'dark' : 'light';
+        updateIcons(isDark);
+      }
+
+      themeToggleBtn.addEventListener('click', toggleTheme);
+      mobileThemeToggleBtn.addEventListener('click', toggleTheme);
 
       // Back to top
       window.addEventListener('scroll', () => {
