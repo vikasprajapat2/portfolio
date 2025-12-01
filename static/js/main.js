@@ -223,4 +223,59 @@ document.addEventListener("DOMContentLoaded", () => {
     if (yearEl) {
         yearEl.textContent = new Date().getFullYear();
     }
+    /* ----------------------------------------
+       CUSTOM CURSOR & SCROLL PROGRESS
+    ----------------------------------------*/
+    const cursorDot = document.querySelector(".cursor-dot");
+    const cursorOutline = document.querySelector(".cursor-outline");
+    const scrollProgress = document.querySelector(".scroll-progress");
+
+    // Cursor Movement
+    window.addEventListener("mousemove", (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        if (cursorDot) {
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+        }
+
+        if (cursorOutline) {
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        }
+    });
+
+    // Scroll Progress
+    window.addEventListener("scroll", () => {
+        const scrollTop = document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercentage = (scrollTop / scrollHeight) * 100;
+
+        if (scrollProgress) {
+            scrollProgress.style.width = `${scrollPercentage}%`;
+        }
+    });
+
+    /* ----------------------------------------
+       MAGNETIC BUTTONS
+    ----------------------------------------*/
+    const magneticBtns = document.querySelectorAll(".magnetic-btn");
+
+    magneticBtns.forEach((btn) => {
+        btn.addEventListener("mousemove", (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+        });
+
+        btn.addEventListener("mouseleave", () => {
+            btn.style.transform = "translate(0, 0)";
+        });
+    });
+
 });

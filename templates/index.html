@@ -72,6 +72,8 @@
 
     html {
       scroll-behavior: smooth;
+      cursor: none;
+      /* Hide default cursor */
     }
 
     /* Background styles */
@@ -138,29 +140,6 @@
       }
     }
 
-    /* Blob Animation */
-    @keyframes blob {
-      0% {
-        transform: translate(0px, 0px) scale(1);
-      }
-
-      33% {
-        transform: translate(30px, -50px) scale(1.1);
-      }
-
-      66% {
-        transform: translate(-20px, 20px) scale(0.9);
-      }
-
-      100% {
-        transform: translate(0px, 0px) scale(1);
-      }
-    }
-
-    .animate-blob {
-      animation: blob 7s infinite;
-    }
-
     .animation-delay-2000 {
       animation-delay: 2s;
     }
@@ -178,6 +157,123 @@
     #topBtn.show {
       opacity: 1;
       pointer-events: auto;
+    }
+
+    /* --- Custom Cursor --- */
+    .cursor-dot,
+    .cursor-outline {
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      z-index: 9999;
+      pointer-events: none;
+    }
+
+    .cursor-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #00f5ff;
+    }
+
+    .cursor-outline {
+      width: 40px;
+      height: 40px;
+      border: 2px solid rgba(0, 245, 255, 0.5);
+    }
+
+    /* --- Scroll Progress Bar --- */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, #00f5ff, #3b82f6);
+      z-index: 10000;
+      transition: width 0.1s;
+    }
+
+    /* --- Glitch Effect --- */
+    .glitch {
+      position: relative;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .glitch::before {
+      left: 2px;
+      text-shadow: -1px 0 #ff00c1;
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim 5s infinite linear alternate-reverse;
+    }
+
+    .glitch::after {
+      left: -2px;
+      text-shadow: -1px 0 #00fff9;
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim2 5s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-anim {
+      0% {
+        clip: rect(30px, 9999px, 10px, 0);
+      }
+
+      20% {
+        clip: rect(80px, 9999px, 90px, 0);
+      }
+
+      40% {
+        clip: rect(10px, 9999px, 50px, 0);
+      }
+
+      60% {
+        clip: rect(60px, 9999px, 20px, 0);
+      }
+
+      80% {
+        clip: rect(40px, 9999px, 70px, 0);
+      }
+
+      100% {
+        clip: rect(90px, 9999px, 30px, 0);
+      }
+    }
+
+    @keyframes glitch-anim2 {
+      0% {
+        clip: rect(10px, 9999px, 80px, 0);
+      }
+
+      20% {
+        clip: rect(50px, 9999px, 20px, 0);
+      }
+
+      40% {
+        clip: rect(90px, 9999px, 10px, 0);
+      }
+
+      60% {
+        clip: rect(20px, 9999px, 60px, 0);
+      }
+
+      80% {
+        clip: rect(70px, 9999px, 40px, 0);
+      }
+
+      100% {
+        clip: rect(30px, 9999px, 90px, 0);
+      }
     }
 
     /* Enhanced Tech Stack Styles (3D Holographic) */
@@ -403,10 +499,7 @@
       left: 0;
       right: 0;
       height: 1px;
-      background: linear-gradient(90deg,
-          transparent,
-          rgba(255, 255, 255, 0.6),
-          transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
     }
 
     .glass-card::after {
@@ -416,16 +509,20 @@
       left: 0;
       width: 1px;
       height: 100%;
-      background: linear-gradient(180deg,
-          rgba(255, 255, 255, 0.6),
-          transparent,
-          rgba(255, 255, 255, 0.2));
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), transparent, rgba(255, 255, 255, 0.2));
     }
   </style>
 </head>
 
 <body
   class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 antialiased transition-colors duration-300">
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"></div>
 
   <!-- Ambient Background -->
   <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
@@ -476,14 +573,15 @@
   <!-- HERO -->
   <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <div class="relative z-10 text-center px-6 max-w-5xl mx-auto" data-aos="fade-up">
-      <h1 class="text-5xl md:text-7xl font-extrabold gradient-text leading-tight">Vikas Prajapat</h1>
+      <h1 class="text-5xl md:text-7xl font-extrabold gradient-text leading-tight glitch" data-text="Vikas Prajapat">
+        Vikas Prajapat</h1>
       <div id="typed" class="mt-6 text-xl md:text-3xl text-slate-600 dark:text-slate-300 h-12 font-medium"></div>
       <div class="mt-12 flex flex-col sm:flex-row gap-6 justify-center">
         <a href="#contact"
-          class="px-9 py-4 rounded-full bg-gradient-to-r from-primary to-secondary font-bold text-lg hover:scale-105 transition shadow-xl">Hire
+          class="px-9 py-4 rounded-full bg-gradient-to-r from-primary to-secondary font-bold text-lg hover:scale-105 transition shadow-xl magnetic-btn">Hire
           Me</a>
         <a href="{{ url_for('static', filename='resume/Vikas_Prajapat_Resume.pdf') }}" download
-          class="px-9 py-4 rounded-full glass font-bold text-lg border border-primary/40 hover:border-primary/80 transition">Download
+          class="px-9 py-4 rounded-full glass font-bold text-lg border border-primary/40 hover:border-primary/80 transition magnetic-btn">Download
           Resume</a>
       </div>
     </div>
@@ -787,7 +885,7 @@
             <a href="#" class="card-link" title="View Code"><i class="fab fa-github"></i></a>
           </div>
         </div>
-        <h3 class="card-title">Voice Assistant 'Nexa'</h3>
+        <h3 class="card-title">Voice Assistant 'Nexa' </h3>
         <p class="card-desc">Desktop voice assistant capable of performing system tasks, web searching, and
           conversational interactions.</p>
         <div class="card-tags">
