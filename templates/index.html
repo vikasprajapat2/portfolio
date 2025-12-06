@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
   <meta charset="utf-8">
@@ -31,7 +31,7 @@
       darkMode: 'class',
       theme: {
         extend: {
-          colors: { primary: '#00f5ff', secondary: '#3b82f6', accent: '#8b5cf6' },
+          colors: { primary: '#ffffff', secondary: '#a3a3a3', accent: '#525252' },
           fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
         }
       }
@@ -60,17 +60,17 @@
     }
 
     .dark {
-      --glass-bg: rgba(15, 23, 42, .55);
-      --glass-border: rgba(255, 255, 255, .07);
-      --card-bg: rgba(15, 23, 42, 0.6);
-      --card-hover-bg: rgba(15, 23, 42, 0.8);
-      background-color: rgba(17, 25, 40, 0.75);
+      --glass-bg: rgba(0, 0, 0, 0.8);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --card-bg: rgba(10, 10, 10, 0.6);
+      --card-hover-bg: rgba(20, 20, 20, 0.8);
+      background-color: #000000;
       border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.125);
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .gradient-text {
-      background: linear-gradient(90deg, #00f5ff, #3b82f6, #8b5cf6);
+      background: linear-gradient(90deg, #ffffff, #a3a3a3, #525252);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -114,93 +114,15 @@
       transition: all .4s;
     }
 
-    left: 0;
-    width: 0%;
-    height: 4px;
-    background: linear-gradient(90deg, #00f5ff, #3b82f6);
-    z-index: 10000;
-    transition: width 0.1s;
-    }
-
-    /* --- Glitch Effect --- */
-    .glitch {
-      position: relative;
-    }
-
-    .glitch::before,
-    .glitch::after {
-      content: attr(data-text);
-      position: absolute;
+    .scroll-progress {
+      position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .glitch::before {
-      left: 2px;
-      text-shadow: -1px 0 #ff00c1;
-      clip: rect(44px, 450px, 56px, 0);
-      animation: glitch-anim 5s infinite linear alternate-reverse;
-    }
-
-    .glitch::after {
-      left: -2px;
-      text-shadow: -1px 0 #00fff9;
-      clip: rect(44px, 450px, 56px, 0);
-      animation: glitch-anim2 5s infinite linear alternate-reverse;
-    }
-
-    @keyframes glitch-anim {
-      0% {
-        clip: rect(30px, 9999px, 10px, 0);
-      }
-
-      20% {
-        clip: rect(80px, 9999px, 90px, 0);
-      }
-
-      40% {
-        clip: rect(10px, 9999px, 50px, 0);
-      }
-
-      60% {
-        clip: rect(60px, 9999px, 20px, 0);
-      }
-
-      80% {
-        clip: rect(40px, 9999px, 70px, 0);
-      }
-
-      100% {
-        clip: rect(90px, 9999px, 30px, 0);
-      }
-    }
-
-    @keyframes glitch-anim2 {
-      0% {
-        clip: rect(10px, 9999px, 80px, 0);
-      }
-
-      20% {
-        clip: rect(50px, 9999px, 20px, 0);
-      }
-
-      40% {
-        clip: rect(90px, 9999px, 10px, 0);
-      }
-
-      60% {
-        clip: rect(20px, 9999px, 60px, 0);
-      }
-
-      80% {
-        clip: rect(70px, 9999px, 40px, 0);
-      }
-
-      100% {
-        clip: rect(30px, 9999px, 90px, 0);
-      }
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, #ffffff, #525252);
+      z-index: 10000;
+      transition: width 0.1s;
     }
 
     /* Enhanced Tech Stack Styles (3D Holographic) */
@@ -219,8 +141,8 @@
     }
 
     .tech-card:hover {
-      border-color: rgba(0, 245, 255, 0.3);
-      box-shadow: 0 10px 40px -10px rgba(0, 245, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 10px 40px -10px rgba(255, 255, 255, 0.15);
       background: var(--tech-card-hover-bg);
     }
 
@@ -229,7 +151,7 @@
       top: -15px;
       left: 50%;
       transform: translateX(-50%) translateZ(30px);
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      background: linear-gradient(135deg, #262626, #171717);
       color: white;
       padding: 0.35rem 1.5rem;
       border-radius: 9999px;
@@ -237,7 +159,7 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
+      box-shadow: 0 10px 20px -5px rgba(255, 255, 255, 0.1);
       white-space: nowrap;
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
@@ -266,7 +188,6 @@
       animation: float 6s ease-in-out infinite;
     }
 
-    /* Stagger floating animation */
     .tech-item:nth-child(2n) img {
       animation-delay: 1s;
     }
@@ -295,32 +216,24 @@
     }
 
     .tech-item:hover span {
-      color: #00f5ff;
-      text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
 
     /* Creative Project Card Styles */
     .creative-card {
-      background: rgba(15, 23, 42, 0.3);
+      background: rgba(10, 10, 10, 0.6);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 1.5rem;
       padding: 2rem;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
     }
 
     .creative-card:hover {
-      border-color: rgba(0, 245, 255, 0.4);
-      box-shadow: 0 20px 40px -10px rgba(0, 245, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 20px 40px -10px rgba(255, 255, 255, 0.1);
       transform: translateY(-8px);
-      background: rgba(15, 23, 42, 0.5);
+      background: rgba(20, 20, 20, 0.8);
     }
 
     .card-header {
@@ -356,7 +269,7 @@
     }
 
     .card-link:hover {
-      color: #00f5ff;
+      color: #ffffff;
       opacity: 1;
       transform: scale(1.1);
     }
@@ -388,19 +301,19 @@
       font-size: 0.75rem;
       padding: 0.35rem 1rem;
       border-radius: 9999px;
-      background: rgba(15, 23, 42, 0.6);
-      color: #38bdf8;
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      background: rgba(30, 30, 30, 0.6);
+      color: #a3a3a3;
+      border: 1px solid rgba(255, 255, 255, 0.1);
       font-weight: 600;
       transition: all 0.3s;
       letter-spacing: 0.025em;
     }
 
     .creative-card:hover .card-tag {
-      border-color: rgba(56, 189, 248, 0.5);
-      background: rgba(56, 189, 248, 0.1);
-      color: #7dd3fc;
-      box-shadow: 0 0 10px rgba(56, 189, 248, 0.1);
+      border-color: rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     }
 
     /* Premium Glass Effect */
@@ -410,8 +323,7 @@
       -webkit-backdrop-filter: blur(27px);
       border-radius: 20px;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.1),
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.2),
         inset 0 -1px 0 rgba(255, 255, 255, 0.05),
         inset 0 0 28px 14px rgba(255, 255, 255, 0.05);
@@ -441,28 +353,10 @@
   </style>
 </head>
 
-<body
-  class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 antialiased transition-colors duration-300">
-
-  <!-- Custom Cursor -->
-  <div class="cursor-dot"></div>
-  <div class="cursor-outline"></div>
+<body class="bg-slate-50 text-slate-900 dark:bg-black dark:text-slate-100 antialiased transition-colors duration-300">
 
   <!-- Scroll Progress -->
   <div class="scroll-progress"></div>
-
-  <!-- Ambient Background -->
-  <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-    <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/20 blur-[100px] animate-blob">
-    </div>
-    <div
-      class="absolute top-[20%] right-[-10%] w-[35%] h-[35%] rounded-full bg-secondary/20 blur-[100px] animate-blob animation-delay-2000">
-    </div>
-    <div
-      class="absolute bottom-[-10%] left-[20%] w-[45%] h-[45%] rounded-full bg-accent/20 blur-[100px] animate-blob animation-delay-4000">
-    </div>
-  </div>
-
   <!-- Particles Background -->
   <div id="particles-js" class="fixed inset-0 z-[-5] pointer-events-none"></div>
 
@@ -477,7 +371,6 @@
         <a href="#projects" class="nav-link hover:text-primary transition">Projects</a>
         <a href="#certificates" class="nav-link hover:text-primary transition">Certificates</a>
         <a href="#contact" class="nav-link hover:text-primary transition">Contact</a>
-        <button id="themeToggle" class="ml-6 text-xl"><i class="fa-solid fa-moon"></i></button>
       </div>
       <button id="menuBtn" class="md:hidden text-2xl"><i class="fa-solid fa-bars"></i></button>
     </div>
@@ -489,52 +382,43 @@
       <a href="#projects" class="block py-3 text-lg">Projects</a>
       <a href="#certificates" class="block py-3 text-lg">Certificates</a>
       <a href="#contact" class="block py-3 text-lg">Contact</a>
-      <button id="mobileThemeToggle"
-        class="w-full text-left py-3 text-lg flex items-center justify-between text-slate-400 hover:text-primary transition">
-        <span>Switch Theme</span>
-        <i class="fa-solid fa-moon"></i>
-      </button>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden"
+    style="background-image: url('/static/images/bg-futuristic-new.png'); background-size: cover; background-position: center;">
     <div class="relative z-10 text-center px-6 max-w-5xl mx-auto" data-aos="fade-up">
-      <h1 class="text-5xl md:text-7xl font-extrabold gradient-text leading-tight glitch" data-text="Vikas Prajapat">
-        Vikas Prajapat</h1>
+      <h1 class="text-5xl md:text-7xl font-extrabold gradient-text leading-tight " data-text="Vikas Prajapat">Vikas
+        Prajapat</h1>
       <div id="typed" class="mt-6 text-xl md:text-3xl text-slate-600 dark:text-slate-300 h-12 font-medium"></div>
-      <div class="mt-12 flex flex-col sm:flex-row gap-6 justify-center">
-        <a href="#contact"
+      <div class="mt-12 flex flex-col sm:flex-row gap-6 justify-center"><a href="#contact"
           class="px-9 py-4 rounded-full bg-gradient-to-r from-primary to-secondary font-bold text-lg hover:scale-105 transition shadow-xl magnetic-btn">Hire
-          Me</a>
-        <a href="{{ url_for('static', filename='resume/Vikas_Prajapat_Resume.pdf') }}" download
+          Me</a><a href="{{ url_for('static', filename='resume/Vikas_Prajapat_Resume.pdf') }}" download
           class="px-9 py-4 rounded-full glass font-bold text-lg border border-primary/40 hover:border-primary/80 transition magnetic-btn">Download
-          Resume</a>
-      </div>
+          Resume</a></div>
     </div>
   </section>
-
   <!-- ABOUT -->
   <section id="about" class="py-24 px-6 max-w-6xl mx-auto">
     <h2 class="text-4xl font-bold mb-6 gradient-text text-center" data-aos="fade-up">About Me</h2>
     <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg text-center max-w-4xl mx-auto"
-      data-aos="fade-up" data-aos-delay="100">
-      Motivated AI Engineer and Computer Science student with hands-on experience in Machine Learning, NLP,
+      data-aos="fade-up" data-aos-delay="100">Motivated AI Engineer and Computer Science student with hands-on
+      experience in Machine Learning,
+      NLP,
       predictive modeling,
-      and data-driven decision systems to enhance industrial and smart-city applications.
-    </p>
+      and data-driven decision systems to enhance industrial and smart-city applications. </p>
     <div class="mt-12 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
       <div class="glass p-8 rounded-2xl card-3d" data-aos="fade-right">
-        <div class="flex items-center gap-4 mb-4">
-          <i class="fa-solid fa-graduation-cap text-primary text-2xl"></i>
+        <div class="flex items-center gap-4 mb-4"><i class="fa-solid fa-graduation-cap text-primary text-2xl"></i>
           <h3 class="text-2xl font-bold">Education</h3>
         </div>
         <p class="text-slate-600 dark:text-slate-300">B.Tech – CSE (Artificial Intelligence)<br><strong>Parul
-            University, Gujarat</strong>| 2021–2025</p>
+            University,
+            Gujarat</strong>| 2021–2025</p>
       </div>
       <div class="glass p-8 rounded-2xl card-3d" data-aos="fade-left">
-        <div class="flex items-center gap-4 mb-4">
-          <i class="fa-solid fa-briefcase text-primary text-2xl"></i>
+        <div class="flex items-center gap-4 mb-4"><i class="fa-solid fa-briefcase text-primary text-2xl"></i>
           <h3 class="text-2xl font-bold">Current Role</h3>
         </div>
         <p class="text-slate-600 dark:text-slate-300">AI Engineer<br><strong>Keya Fusion Technology Pvt Ltd</strong>|
@@ -542,7 +426,6 @@
       </div>
     </div>
   </section>
-
   <!-- SKILLS -->
   <section id="skills" class="py-24 px-6 max-w-7xl mx-auto">
     <div class="text-center mb-20 relative z-10" data-aos="fade-up">
@@ -570,7 +453,7 @@
       </div>
       <!-- Card 2: Generative AI -->
       <div class="tech-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="tech-label bg-purple-600">Generative AI</div>
+        <div class="tech-label bg-neutral-800">Generative AI</div>
         <div class="tech-grid">
           <div class="tech-item"><img src="{{ url_for('static', filename='images/openai.png') }}"
               alt="OpenAI"><span>OpenAI</span></div>
@@ -584,7 +467,7 @@
       </div>
       <!-- Card 3: Computer Vision -->
       <div class="tech-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="tech-label bg-cyan-600">Computer Vision</div>
+        <div class="tech-label bg-neutral-800">Computer Vision</div>
         <div class="tech-grid">
           <div class="tech-item"><img src="{{ url_for('static', filename='images/opencv.png') }}"
               alt="OpenCV"><span>OpenCV</span></div>
@@ -594,7 +477,7 @@
       </div>
       <!-- Card 4: Data Science -->
       <div class="tech-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="tech-label bg-emerald-600">Data Science</div>
+        <div class="tech-label bg-neutral-800">Data Science</div>
         <div class="tech-grid">
           <div class="tech-item"><img src="{{ url_for('static', filename='images/numpy.png') }}"
               alt="NumPy"><span>NumPy</span></div>
@@ -612,7 +495,7 @@
       </div>
       <!-- Card 5: Web Engineering -->
       <div class="tech-card" data-aos="fade-up" data-aos-delay="400">
-        <div class="tech-label bg-orange-600">Web Engineering</div>
+        <div class="tech-label bg-neutral-800">Web Engineering</div>
         <div class="tech-grid">
           <div class="tech-item"><img src="{{ url_for('static', filename='images/flask.png') }}"
               alt="Flask"><span>Flask</span></div>
@@ -632,7 +515,7 @@
       </div>
       <!-- Card 6: DevOps & Cloud -->
       <div class="tech-card" data-aos="fade-up" data-aos-delay="500">
-        <div class="tech-label bg-slate-600">DevOps & Cloud</div>
+        <div class="tech-label bg-neutral-800">DevOps & Cloud</div>
         <div class="tech-grid">
           <div class="tech-item"><img src="{{ url_for('static', filename='images/aws.png') }}"
               alt="AWS"><span>AWS</span></div>
@@ -654,7 +537,6 @@
       </div>
     </div>
   </section>
-
   <!-- EXPERIENCE -->
   <section id="experience" class="py-24 px-6 max-w-4xl mx-auto">
     <h2 class="text-4xl font-bold mb-12 gradient-text text-center" data-aos="fade-up">Professional Experience</h2>
@@ -670,8 +552,7 @@
           class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-6 rounded-xl border border-white/5 shadow-lg transition hover:scale-[1.02]"
           data-aos="fade-up">
           <div class="flex justify-between items-center mb-2">
-            <h3 class="font-bold text-lg text-slate-900 dark:text-white">AI Engineer</h3>
-            <span
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">AI Engineer</h3><span
               class="text-xs font-medium px-2.5 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">Present</span>
           </div>
           <div class="mb-3">
@@ -690,8 +571,7 @@
           class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-6 rounded-xl border border-white/5 shadow-lg transition hover:scale-[1.02]"
           data-aos="fade-up" data-aos-delay="100">
           <div class="flex justify-between items-center mb-2">
-            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Software Developer Intern</h3>
-            <span
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Software Developer Intern</h3><span
               class="text-xs font-medium px-2.5 py-0.5 rounded bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-600">Previous</span>
           </div>
           <div class="mb-3">
@@ -702,7 +582,6 @@
       </div>
     </div>
   </section>
-
   <!-- PROJECTS -->
   <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
     <div class="text-center mb-16" data-aos="fade-up">
@@ -713,161 +592,130 @@
       <!-- Project 1 -->
       <div class="creative-card group" data-aos="fade-up">
         <div class="card-header">
-          <div class="card-icon bg-gradient-to-br from-orange-500 to-red-500"><i class="fa-solid fa-robot"></i></div>
-          <div class="card-links">
-            <a href="https://github.com/vikasprajapat2" target="_blank" class="card-link" title="View Code"><i
-                class="fab fa-github"></i></a>
-            <a href="#" class="card-link" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+          <div class="card-icon bg-gradient-to-br from-neutral-800 to-neutral-900"><i class="fa-solid fa-robot"></i>
           </div>
+          <div class="card-links"><a href="https://github.com/vikasprajapat2" target="_blank" class="card-link"
+              title="View Code"><i class="fab fa-github"></i></a><a href="#" class="card-link" title="Live Demo"><i
+                class="fas fa-external-link-alt"></i></a></div>
         </div>
         <h3 class="card-title">Multi-PDF Chatbot Agent</h3>
         <p class="card-desc">Advanced RAG system using LangChain & Gemini for querying multiple documents
           simultaneously. Intelligent context retrieval.</p>
-        <div class="card-tags">
-          <span class="card-tag">LangChain</span>
-          <span class="card-tag">Gemini Pro</span>
-          <span class="card-tag">FAISS</span>
-          <span class="card-tag">Streamlit</span>
-        </div>
+        <div class="card-tags"><span class="card-tag">LangChain</span><span class="card-tag">Gemini
+            Pro</span><span class="card-tag">FAISS</span><span class="card-tag">Streamlit</span></div>
       </div>
       <!-- Project 2: HRMS -->
       <div class="creative-card group" data-aos="fade-up" data-aos-delay="100">
         <div class="card-header">
-          <div class="card-icon bg-gradient-to-br from-blue-500 to-cyan-500"><i class="fa-solid fa-users"></i></div>
-          <div class="card-links">
-            <a href="https://github.com/vikasprajapat2/HRMS" target="_blank" class="card-link" title="View Code"><i
-                class="fab fa-github"></i></a>
-            <a href="https://hrms-2-fjpt.onrender.com" target="_blank" class="card-link" title="Live Demo"><i
-                class="fas fa-external-link-alt"></i></a>
+          <div class="card-icon bg-gradient-to-br from-neutral-800 to-neutral-900"><i class="fa-solid fa-users"></i>
           </div>
+          <div class="card-links"> <a href="https://github.com/vikasprajapat2/HRMS" target="_blank" class="card-link"
+              title="View Code"><i class="fab fa-github"></i></a> <a href="https://hrms-2-fjpt.onrender.com"
+              target="_blank" class="card-link" title="Live Demo"><i class="fas fa-external-link-alt"></i></a> </div>
         </div>
         <h3 class="card-title">HR Management System</h3>
-        <p class="card-desc">Comprehensive HRMS with attendance tracking, payroll processing, leave management, and
-          role-based access control.</p>
-        <div class="card-tags">
-          <span class="card-tag">Flask</span>
-          <span class="card-tag">MySQL</span>
-          <span class="card-tag">Bootstrap 5</span>
-        </div>
+        <p class="card-desc">Comprehensive HRMS with attendance tracking, payroll processing, leave
+          management, and role-based access control.</p>
+        <div class="card-tags"><span class="card-tag">Flask</span><span class="card-tag">MySQL</span><span
+            class="card-tag">Bootstrap 5</span></div>
       </div>
       <!-- Project 3: AI Traffic Surveillance -->
       <div class="creative-card group" data-aos="fade-up" data-aos-delay="200">
         <div class="card-header">
-          <div class="card-icon bg-gradient-to-br from-emerald-500 to-teal-500"><i class="fa-solid fa-car"></i></div>
-          <div class="card-links">
-            <a href="#" class="card-link" title="View Code"><i class="fab fa-github"></i></a>
+          <div class="card-icon bg-gradient-to-br from-neutral-800 to-neutral-900"><i class="fa-solid fa-car"></i></div>
+          <div class="card-links"> <a href="#" class="card-link" title="View Code"><i class="fab fa-github"></i></a>
           </div>
         </div>
         <h3 class="card-title">AI Traffic Surveillance</h3>
-        <p class="card-desc">Real-time traffic monitoring system using YOLOv8 for vehicle detection and classification
-          with speed estimation.</p>
-        <div class="card-tags">
-          <span class="card-tag">YOLOv8</span>
-          <span class="card-tag">OpenCV</span>
-          <span class="card-tag">Python</span>
-        </div>
+        <p class="card-desc">Real-time traffic monitoring system using YOLOv8 for vehicle detection and
+          classification with speed estimation.</p>
+        <div class="card-tags"><span class="card-tag">YOLOv8</span><span class="card-tag">OpenCV</span><span
+            class="card-tag">Python</span></div>
       </div>
       <!-- Project 4: Smart Health Predictor -->
       <div class="creative-card group" data-aos="fade-up" data-aos-delay="300">
         <div class="card-header">
-          <div class="card-icon bg-gradient-to-br from-rose-500 to-pink-500"><i class="fa-solid fa-heart-pulse"></i>
-          </div>
-          <div class="card-links">
-            <a href="#" class="card-link" title="View Code"><i class="fab fa-github"></i></a>
+          <div class="card-icon bg-gradient-to-br from-neutral-800 to-neutral-900"><i
+              class="fa-solid fa-heart-pulse"></i></div>
+          <div class="card-links"> <a href="#" class="card-link" title="View Code"><i class="fab fa-github"></i></a>
           </div>
         </div>
         <h3 class="card-title">Smart Health Predictor</h3>
-        <p class="card-desc">Machine learning model for early prediction of multiple diseases including diabetes and
-          heart disease using patient data.</p>
-        <div class="card-tags">
-          <span class="card-tag">Scikit-learn</span>
-          <span class="card-tag">Pandas</span>
-          <span class="card-tag">Flask</span>
-        </div>
+        <p class="card-desc">Machine learning model for early prediction of multiple diseases including
+          diabetes and heart disease using patient data.</p>
+        <div class="card-tags"><span class="card-tag">Scikit-learn</span><span class="card-tag">Pandas</span><span
+            class="card-tag">Flask</span></div>
       </div>
       <!-- Project 5: Recommendation Engine (Hidden) -->
       <div class="creative-card group hidden-project hidden" data-aos="fade-up">
         <div class="card-header">
-          <div class="card-icon bg-gradient-to-br from-violet-500 to-purple-500"><i class="fa-solid fa-thumbs-up"></i>
+          <div class="card-icon bg-gradient-to-br from-neutral-800 to-neutral-900"><i class="fa-solid fa-thumbs-up"></i>
           </div>
-          <div class="card-links">
-            <a href="#" class="card-link" title="View Code"><i class="fab fa-github"></i></a>
+          <div class="card-links"> <a href="#" class="card-link" title="View Code"><i class="fab fa-github"></i></a>
           </div>
         </div>
         <h3 class="card-title">Recommendation Engine</h3>
-        <p class="card-desc">Personalized product recommendation system for e-commerce platforms using collaborative
-          filtering.</p>
-        <div class="card-tags">
-          <span class="card-tag">Python</span>
-          <span class="card-tag">TensorFlow</span>
-          <span class="card-tag">NLP</span>
-        </div>
+        <p class="card-desc">Personalized product recommendation system for e-commerce platforms using
+          collaborative filtering.</p>
+        <div class="card-tags"><span class="card-tag">Python</span><span class="card-tag">TensorFlow</span><span
+            class="card-tag">NLP</span></div>
       </div>
       <!-- Project 6: Voice Assistant (Hidden) -->
       <div class="creative-card group hidden-project hidden" data-aos="fade-up">
         <div class="card-header">
-          <div class="card-icon bg-gradient-to-br from-amber-500 to-yellow-500"><i class="fa-solid fa-microphone"></i>
-          </div>
-          <div class="card-links">
-            <a href="#" class="card-link" title="View Code"><i class="fab fa-github"></i></a>
+          <div class="card-icon bg-gradient-to-br from-neutral-800 to-neutral-900"><i
+              class="fa-solid fa-microphone"></i></div>
+          <div class="card-links"> <a href="#" class="card-link" title="View Code"><i class="fab fa-github"></i></a>
           </div>
         </div>
         <h3 class="card-title">Voice Assistant 'Nexa' </h3>
-        <p class="card-desc">Desktop voice assistant capable of performing system tasks, web searching, and
-          conversational interactions.</p>
-        <div class="card-tags">
-          <span class="card-tag">Python</span>
-          <span class="card-tag">SpeechRecognition</span>
-          <span class="card-tag">PyAudio</span>
-        </div>
+        <p class="card-desc">Desktop voice assistant capable of performing system tasks, web
+          searching, and conversational interactions.</p>
+        <div class="card-tags"><span class="card-tag">Python</span><span class="card-tag">SpeechRecognition</span><span
+            class="card-tag">PyAudio</span></div>
       </div>
     </div>
-    <div class="text-center mt-16">
-      <button id="viewMoreBtn"
+    <div class="text-center mt-16"> <button id="viewMoreBtn"
         class="px-10 py-4 rounded-full bg-slate-800 border border-primary/30 text-primary font-bold text-lg hover:bg-primary hover:text-slate-900 transition shadow-[0_0_20px_rgba(0,245,255,0.15)] hover:shadow-[0_0_30px_rgba(0,245,255,0.4)]">View
-        More Projects <i class="fa-solid fa-arrow-down ml-2"></i></button>
-    </div>
+        More Projects <i class="fa-solid fa-arrow-down ml-2"></i></button> </div>
   </section>
-
   <!-- CERTIFICATES -->
   <section id="certificates" class="py-24 px-6 max-w-6xl mx-auto">
     <h2 class="text-4xl font-bold mb-10 gradient-text text-center" data-aos="fade-up">Certificates</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-      <div class="glass p-6 rounded-2xl text-center card-3d" data-aos="zoom-in">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="h-12 mx-auto mb-4"
+      <div class="glass p-6 rounded-2xl text-center card-3d" data-aos="zoom-in"> <img
+          src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="h-12 mx-auto mb-4"
           alt="Microsoft">
         <p class="text-xs text-slate-600 dark:text-slate-300">Azure AI Fundamentals</p>
       </div>
-      <div class="glass p-6 rounded-2xl text-center card-3d" data-aos="zoom-in" data-aos-delay="100">
-        <img src="https://deeplearning.ai/wp-content/uploads/2020/06/logo.png" class="h-12 mx-auto mb-4"
+      <div class="glass p-6 rounded-2xl text-center card-3d" data-aos="zoom-in" data-aos-delay="100"> <img
+          src="https://deeplearning.ai/wp-content/uploads/2020/06/logo.png" class="h-12 mx-auto mb-4"
           alt="DeepLearning.AI">
         <p class="text-xs text-slate-600 dark:text-slate-300">ML Specialization</p>
       </div>
-      <div class="glass p-6 rounded-2xl text-center card-3d" data-aos="zoom-in" data-aos-delay="200">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="h-12 mx-auto mb-4"
+      <div class="glass p-6 rounded-2xl text-center card-3d" data-aos="zoom-in" data-aos-delay="200"> <img
+          src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="h-12 mx-auto mb-4"
           alt="Microsoft">
         <p class="text-xs text-slate-600 dark:text-slate-300">Build NLP Solutions</p>
       </div>
-      <div class="glass p-6 rounded-2xl text-center card-3d" data-aos="zoom-in" data-aos-delay="300">
-        <img src="https://durga.com/wp-content/uploads/2021/06/durga-logo.png" class="h-12 mx-auto mb-4" alt="Durga">
+      <div class="glass p-6 rounded-2xl text-center card-3d" data-aos="zoom-in" data-aos-delay="300"> <img
+          src="https://durga.com/wp-content/uploads/2021/06/durga-logo.png" class="h-12 mx-auto mb-4" alt="Durga">
         <p class="text-xs text-slate-600 dark:text-slate-300">Python for Data Science</p>
       </div>
     </div>
   </section>
-
   <!-- CONTACT -->
   <section id="contact" class="py-24 px-6 max-w-4xl mx-auto">
     <div class="glass p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden" data-aos="fade-up">
       <!-- Decorative background -->
-      <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl pointer-events-none">
+      </div>
       <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/20 rounded-full blur-3xl pointer-events-none">
       </div>
-
       <div class="text-center mb-12 relative z-10">
         <h2 class="text-4xl font-bold mb-4 gradient-text">Get In Touch</h2>
         <p class="text-slate-500 dark:text-slate-400">Have a project in mind or just want to say hi?</p>
       </div>
-
       <div class="grid md:grid-cols-2 gap-12 relative z-10">
         <!-- Contact Info -->
         <div class="space-y-8">
@@ -877,8 +725,7 @@
               <i class="fa-solid fa-envelope"></i>
             </div>
             <div>
-              <h3 class="font-bold text-lg mb-1">Email</h3>
-              <a href="mailto:vikasprajapat34118@gmail.com"
+              <h3 class="font-bold text-lg mb-1">Email</h3> <a href="mailto:vikasprajapat34118@gmail.com"
                 class="text-slate-500 dark:text-slate-400 hover:text-primary transition">vikasprajapat34118@gmail.com</a>
             </div>
           </div>
@@ -894,55 +741,41 @@
           </div>
           <div class="pt-8">
             <h3 class="font-bold text-lg mb-4">Connect with me</h3>
-            <div class="flex gap-4">
-              <a href="https://www.linkedin.com/in/vikas-prajapat-08062021b/" target="_blank"
-                class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-[#0077b5] hover:text-white transition transform hover:-translate-y-1">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
-              <a href="https://github.com/vikasprajapat2" target="_blank"
-                class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-[#333] hover:text-white transition transform hover:-translate-y-1">
-                <i class="fa-brands fa-github"></i>
-              </a>
-            </div>
+            <div class="flex gap-4"> <a href="https://www.linkedin.com/in/vikas-prajapat-08062021b/" target="_blank"
+                class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-[#0077b5] hover:text-white transition transform hover:-translate-y-1"><i
+                  class="fa-brands fa-linkedin-in"></i></a> <a href="https://github.com/vikasprajapat2" target="_blank"
+                class="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-[#333] hover:text-white transition transform hover:-translate-y-1"><i
+                  class="fa-brands fa-github"></i></a> </div>
           </div>
         </div>
-
         <!-- Contact Form -->
         <form id="contactForm" class="space-y-4">
-          <div>
-            <input type="text" name="name" placeholder="Your Name" required
+          <div><input type="text" name="name" placeholder="Your Name" required
               class="w-full px-4 py-3 rounded-lg bg-slate-100 dark:bg-slate-900/50 border border-slate-300 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition text-slate-900 dark:text-slate-200 placeholder-slate-500">
           </div>
-          <div>
-            <input type="email" name="email" placeholder="Your Email" required
+          <div><input type="email" name="email" placeholder="Your Email" required
               class="w-full px-4 py-3 rounded-lg bg-slate-100 dark:bg-slate-900/50 border border-slate-300 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition text-slate-900 dark:text-slate-200 placeholder-slate-500">
           </div>
-          <div>
-            <textarea name="message" rows="4" placeholder="Your Message" required
+          <div><textarea name="message" rows="4" placeholder="Your Message" required
               class="w-full px-4 py-3 rounded-lg bg-slate-100 dark:bg-slate-900/50 border border-slate-300 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition text-slate-900 dark:text-slate-200 placeholder-slate-500 resize-none"></textarea>
-          </div>
-          <button type="submit"
+          </div> <button type="submit"
             class="w-full py-3 rounded-lg bg-gradient-to-r from-primary to-secondary font-bold text-slate-900 hover:shadow-[0_0_20px_rgba(0,245,255,0.3)] transition transform hover:scale-[1.02] active:scale-[0.98]">
-            <span id="btnText">Send Message</span>
-            <span id="loading" class="hidden"><i class="fa-solid fa-circle-notch fa-spin"></i> Sending...</span>
-          </button>
+            <span id="btnText">Send Message</span> <span id="loading" class="hidden"><i
+                class="fa-solid fa-circle-notch fa-spin"></i> Sending...</span> </button>
           <p id="status" class="text-center text-sm h-5"></p>
         </form>
       </div>
     </div>
   </section>
-
   <!-- FOOTER -->
   <footer class="py-8 text-center text-slate-500 text-sm border-t border-white/5 bg-slate-900">
-    <p>&copy; <span id="year"></span> Vikas Prajapat. All rights reserved.</p>
+    <p>&copy;
+      <span id="year"></span>Vikas Prajapat. All rights reserved.
+    </p>
   </footer>
-
-  <!-- Back to Top -->
-  <button id="topBtn"
-    class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-primary text-slate-900 flex items-center justify-center shadow-lg hover:scale-110 transition z-40">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
-
+  <!-- Back to Top --><button id="topBtn"
+    class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-primary text-slate-900 flex items-center justify-center shadow-lg hover:scale-110 transition z-40"><i
+      class="fa-solid fa-arrow-up"></i></button>
 </body>
 
 </html>

@@ -27,31 +27,33 @@ document.addEventListener("DOMContentLoaded", () => {
         typingLoop();
     }
 
-
     /* ----------------------------------------
        PARTICLES EFFECT
     ----------------------------------------*/
     if (document.getElementById("particles-js")) {
         particlesJS("particles-js", {
             particles: {
-                number: { value: 60, density: { enable: true, value_area: 800 } },
-                color: { value: "#3b82f6" },
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
                 shape: { type: "circle" },
-                opacity: { value: 0.3, random: false },
-                size: { value: 3, random: true },
+                opacity: { value: 0.1, random: true },
+                size: { value: 2, random: true },
                 line_linked: {
                     enable: true,
                     distance: 150,
-                    color: "#3b82f6",
-                    opacity: 0.2,
+                    color: "#ffffff",
+                    opacity: 0.05,
                     width: 1
                 },
                 move: {
                     enable: true,
-                    speed: 1.5,
+                    speed: 1,
                     direction: "none",
+                    random: false,
                     straight: false,
                     out_mode: "out",
+                    bounce: false,
+                    attract: { enable: false, rotateX: 600, rotateY: 1200 }
                 }
             },
             interactivity: {
@@ -70,33 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
             retina_detect: true
         });
     }
-
-
-    /* ----------------------------------------
-       DARK MODE
-    ----------------------------------------*/
-    const html = document.documentElement;
-    const themeBtn = document.getElementById("themeToggle");
-    const mobileThemeBtn = document.getElementById("mobileThemeToggle");
-
-    function applyTheme(dark) {
-        if (dark) {
-            html.classList.add("dark");
-            if (themeBtn) themeBtn.querySelector("i").className = "fa-solid fa-sun";
-            if (mobileThemeBtn) mobileThemeBtn.querySelector("i").className = "fa-solid fa-sun";
-        } else {
-            html.classList.remove("dark");
-            if (themeBtn) themeBtn.querySelector("i").className = "fa-solid fa-moon";
-            if (mobileThemeBtn) mobileThemeBtn.querySelector("i").className = "fa-solid fa-moon";
-        }
-        localStorage.setItem("theme", dark ? "dark" : "light");
-    }
-
-    if (themeBtn) themeBtn.onclick = () => applyTheme(!html.classList.contains("dark"));
-    if (mobileThemeBtn) mobileThemeBtn.onclick = () => applyTheme(!html.classList.contains("dark"));
-
-    applyTheme(localStorage.getItem("theme") === "dark");
-
 
     /* ----------------------------------------
        NAV ACTIVE HIGHLIGHT
@@ -275,22 +250,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         btn.addEventListener("mouseleave", () => {
             btn.style.transform = "translate(0, 0)";
-        });
-    });
-
-    /* ----------------------------------------
-       CURSOR HOVER EFFECT
-    ----------------------------------------*/
-    const interactiveElements = document.querySelectorAll("a, button, .card, .tech-item, .creative-card, .glass");
-
-    interactiveElements.forEach(el => {
-        el.addEventListener("mouseenter", () => {
-            if (cursorOutline) cursorOutline.classList.add("cursor-hover");
-            if (cursorDot) cursorDot.classList.add("cursor-hover");
-        });
-        el.addEventListener("mouseleave", () => {
-            if (cursorOutline) cursorOutline.classList.remove("cursor-hover");
-            if (cursorDot) cursorDot.classList.remove("cursor-hover");
         });
     });
 
